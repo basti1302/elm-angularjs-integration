@@ -89,6 +89,20 @@ module.exports = function makeWebpackConfig() {
       loader: 'babel-loader',
       exclude: /node_modules/
     }, {
+      test:    /\.elm$/,
+      exclude: [/elm-stuff/, /node_modules/],
+      use:  [
+        { loader: 'elm-hot-loader' },
+        { loader: 'elm-webpack-loader',
+          options: {
+            verbose: true,
+            warn: true,
+            debug: isTest,
+            cwd: __dirname
+          }
+        }
+      ]
+    }, {
       // CSS LOADER
       // Reference: https://github.com/webpack/css-loader
       // Allow loading css through js
@@ -167,6 +181,11 @@ module.exports = function makeWebpackConfig() {
           plugins: [autoprefixer]
         }
       }
+    }),
+    new webpack.ProvidePlugin({
+        'window.jQuery': 'jquery',
+        $: 'jquery',
+        jQuery: 'jquery'
     })
   ];
 

@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/basti1302/elm-angularjs-integration",
   "dependencies": {
-    "angular": "^1.5.0"
+    "angular": "^1.5.0",
+    "jquery": "^3.2.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0",
@@ -30,6 +31,9 @@
     "babel-preset-es2015": "^6.1.18",
     "copy-webpack-plugin": "4.0.1",
     "css-loader": "0.26.1",
+    "elm": "^0.18.0",
+    "elm-hot-loader": "^0.5.4",
+    "elm-webpack-loader": "^4.3.1",
     "extract-text-webpack-plugin": "2.0.0-beta.5",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.7.1",

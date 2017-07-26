@@ -14,7 +14,7 @@ describe('app', () => {
     });
 
     it('should contain the starter url', () => {
-      expect(ctrl.url).toBe('https://github.com/preboot/angular-webpack');
+      expect(ctrl.repositoryUrl).toBe('https://github.com/basti1302/elm-angularjs-integration');
     });
   });
 });
