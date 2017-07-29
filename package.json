@@ -7,7 +7,10 @@
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
-    "start": "npm run server"
+    "start": "npm run server",
+    "protractor": "protractor test/protractor-conf.js",
+    "webdriver-download": "webdriver-manager update",
+    "webdriver-start": "webdriver-manager start"
   },
   "repository": {
     "type": "git",
@@ -50,6 +53,7 @@
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.4",
     "postcss-loader": "1.2.2",
+    "protractor": "^5.1.2",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
     "style-loader": "^0.13.0",

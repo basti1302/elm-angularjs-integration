@@ -35,10 +35,10 @@ type Msg
 
 init : ( Model, Cmd Msg )
 init =
-    ( { maybeStringValue = Just "abc"
-      , nonNullableStringValue = "def"
-      , maybeIntValue = Just 42
-      , nonNullableIntValue = 666
+    ( { maybeStringValue = Nothing
+      , nonNullableStringValue = ""
+      , maybeIntValue = Nothing
+      , nonNullableIntValue = 0
       , maybeObject = Nothing
       }
     , Cmd.none
@@ -125,7 +125,8 @@ stringSection maybeStringValue =
     div []
         [ simpleStringDirective maybeStringValue
         , input
-            [ value (maybeStringValue |> Maybe.withDefault "")
+            [ id "simple-string-elm"
+            , value (maybeStringValue |> Maybe.withDefault "")
             , onInput ChangeStringValueFromElm
             ]
             []
@@ -139,7 +140,7 @@ simpleStringDirective maybeStringValue =
         "simple-string-directive"
         ChangeStringValueFromDirective
         { markup =
-            "<input ng-model=\"value\"></input><button ng-click=\"value = null\">delete</button>"
+            "<input id=\"simple-string-ng\" ng-model=\"value\"></input><button ng-click=\"value = null\">delete</button>"
         , currentValue = maybeStringValue
         , scopeKey = Just "value"
         }
